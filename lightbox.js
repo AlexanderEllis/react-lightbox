@@ -5,7 +5,7 @@ var Lightbox = React.createClass({
   render:function(){
     return (
       <div id="lightbox" style={{"display":this.props.display}}>
-        <div id="lightbox-background"></div>
+        <div id="lightbox-background" onClick={this.props.changeLightboxDisplay}></div>
         <div id="lightbox-foreground">
           <p>Are you sure?</p>
           <form>
@@ -22,7 +22,7 @@ var Light = React.createClass({
   render: function() {
     var status = this.props.status.on ? "on" : "off" ;
     return (
-      <span>The light is {status}.</span>
+      <h3>The light is {status}.</h3>
     );
   }
 });
@@ -31,15 +31,14 @@ var Button = React.createClass({
   handleChange: function() {
     this.props.handleChange();
   },
-  showLightBox: function() { //TODO: fix display
-    return display ? "block": "none";
-  },
   render: function() {
-    var lightbox = [];
-    if (this.props.lightboxStatus) {
-      lightbox.push(<Lightbox handleChange={this.handleChange} changeLightboxDisplay={this.props.changeLightboxDisplay} display={display}/>)
-    }
+
     var display = this.props.lightboxStatus ? "block": "none";
+    if (this.props.lightboxStatus) {
+      var lightbox = (<Lightbox handleChange={this.handleChange} changeLightboxDisplay={this.props.changeLightboxDisplay} display={display} />)
+    }
+
+
     return (
       <div>
         <form>

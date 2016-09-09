@@ -1,0 +1,31 @@
+#lightbox {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+}
+
+#lightbox-background {
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.3;
+  background-color: black;
+  position: fixed;
+}
+
+#lightbox-foreground {
+  width: 30vw;
+  height: 30vh;
+  text-align: center;
+  position: fixed;
+  top: 35vh;
+  right: 35vw;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
