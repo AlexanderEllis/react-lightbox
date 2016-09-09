@@ -56,7 +56,7 @@ var Switch = React.createClass({
   getInitialState: function(){
     return {
       on: true,
-      lightbox: true
+      lightbox: false
     };
   },
   handleChange: function() {
